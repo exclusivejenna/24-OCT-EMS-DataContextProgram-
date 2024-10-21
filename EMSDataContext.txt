@@ -1,0 +1,32 @@
+using Microsoft.EntityFrameworkCore;
+using BlazorCRUDSsr.Models;
+
+using System;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
+namespace BlazorCRUDSsr.Data
+{
+
+    public class DataContext : IdentityDbContext
+    {
+        public DataContext(DbContextOptions options)
+            : base(options)
+        {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+                   }
+
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Department> Department { get; set; }
+        public DbSet<SkillModel> Skill { get; set; }
+        public DbSet<Country> Country { get; set; }
+        public  DbSet<City> City { get; set; }  
+
+    }
+}
+
+
+
